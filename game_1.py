@@ -1,16 +1,16 @@
 from game_functions import pick_value
 
 def play_game_1(min_x=0, max_x=20):
-    
+
     print("Welcome to Game 1: 'Guess the Number'")
     print(f"Please think of a number between {min_x} and {max_x}")
     input("Press enter when you have chosen your number (do not tell me it!)\n")
     poss_values = list(range(min_x,max_x+1))
-    
+
     game_ended = False
 
     n = 0
-    
+
     while game_ended == False:
         # select a guess at random
         guess = pick_value(poss_values)
@@ -18,7 +18,7 @@ def play_game_1(min_x=0, max_x=20):
         print()
         print(f"Guess #{n}:")
         result = take_user_input(guess)
-        
+
         if result==1:
             game_ended = True
         elif result==2:
@@ -32,7 +32,7 @@ def play_game_1(min_x=0, max_x=20):
 
     print()
     print(f"That was fun!\nI took {n} guesses...\nThanks for playing\nGoodbye!")
-    
+
 def take_user_input(guess):
     print(f"My guess is that your number is {guess}. Was I right?")
     print(f"1 - Yes that was my number!")
